@@ -6,15 +6,26 @@
     
     <link rel="icon" href="/CS3_2ndQtrPortfolio_RubidiumOcampo/assets/favicon.ico">
 
-    <title>Table</title>
+    <title>Rubidium'29 Friday Schedule</title>
     <style>
+        header, footer {
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
         body {
             font-family: "Comic Sans MS", sans-serif;
             background-color: #fce5cdff;
             color: #783f04;
         }
         table {
-            border-collapse:collapse;
+            
             width: 35%;
             margin: 0 auto;
             text-align: center;          
@@ -26,8 +37,12 @@
         h1 {
             text-align: center;
         }
-        p {
+        h2 {
             text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
         }
         .sixseven {
             position: absolute;
@@ -42,8 +57,18 @@
     </style>
 </head>
 <body>
-    <h1>Rubidium'29 Schedule</h1>
-    <p>Friday Schedule</p>
+    <header>
+        <h1>Rubidium'29 Schedule</h1>
+        <h2>Friday Schedule</h2>
+    </header>
+    
+
+    <nav>
+        <a href="index.html">Monday Schedule</a> |
+        <a href="https://sashalatte.github.io/CS3_2ndQtrPortfolio/public/2Q1GRubidiumChua.html">Tuesday Schedule</a> |
+        <a href="2Q1GRubidiumOcampo.html">Thursday Schedule</a>
+    </nav>
+
     <table>
         <thead>
             <tr>
@@ -59,6 +84,10 @@
             <tr>
                 <td>8:15 AM - 9:00 AM</td>
                 <td>English 3</td>
+            </tr>
+            <tr>
+                <td>9:00 AM - 9:10 AM</td>
+                <td style="background-color: #f9cb9c;">Break</td>
             </tr>
             <tr>
                 <td>9:10 AM - 9:55 AM</td>
@@ -77,7 +106,10 @@
                 <td>Mathematics 3</td>
             </tr>
             <tr>
-                <td>12:10 PM - 1:05 PM</td>
+                <td>12:10 PM - 12:20 PM</td>
+                <td style="background-color: #f9cb9c;">Break</td>
+            <tr>
+                <td>12:20 PM - 1:05 PM</td>
                 <td>Lunch</td>
             </tr>
             <tr>
@@ -88,6 +120,9 @@
                 <td>1:55 PM - 2:35 PM</td>
                 <td>Study Period</td>
             </tr>
+            <tr>
+                <td>2:35 PM - 2:45 PM</td>
+                <td style="background-color: #f9cb9c;">Break</td>
             <tr>
                 <td>2:45 PM - 3:30 PM</td>
                 <td>Study Period</td>
@@ -104,9 +139,18 @@
     </div>
     <img src="https://clashfordummies.com/wp-content/uploads/2016/02/hog-bath.jpg"
     alt="hogrider" width="490" height="300">
+
     <footer>
-        <p>© 2025 Alejandro Ocampo All rights reserved.</p>
-    </footer>
-    
+        <ul class="social-list">
+            <li><a href="https://github.com/banonok11" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://banonok11.github.io/CS3_2ndQtrPortfolio_RubidiumOcampo/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></li>
+        </ul>
+        <p class="copyright">
+            &copy; <span id="year"></span> Alejandro Ocampo. All rights reserved.
+        </p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>    
 </body>
 </html>
