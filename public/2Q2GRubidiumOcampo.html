@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubidium'29 Friday Schedule</title>
+  <meta name="description" content="A table containing the Friday schedule of Rubidium'29 with favicon, meta tags, navigation, and footer.">
+  <meta name="author" content="Alejandro G. Ocampo">
+  
+  <link rel="icon" href="/CS3_2ndQtrPortfolio_RubidiumOcampo/assets/favicon.ico">
+  
+  <link rel="stylesheet" href="external.css">
+  
+  <style>
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .welcome {
+        flex: 1 1 300px;
+        max-width: 400px;
+    }
+
+    .welcome p {
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    .media {
+        flex: 1 1 400px;
+        text-align: center;
+    }
+
+    .media iframe, .media img {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 10px;
+    }
+
+    .students {
+        text-align: center;
+        font-style: italic;
+        color: #5b2c0f;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Rubidium'29 Schedule</h1>
+    <h2>Friday Schedule</h2>
+  </header>
+
+  <nav>
+    <a href="https://andymorana.github.io/AndyMorana-CS3_2ndQtrPortfolio/public/2Q1GRubidiumMorana.html">Monday Schedule</a>
+    <a href="https://sashalatte.github.io/CS3_2ndQtrPortfolio/public/2Q1GRubidiumChua.html">Tuesday Schedule</a>
+    <a href="https://wayne-411.github.io/CS3_2NDQTRPORTFOLIO_RUBIDIUMCUETO/public/2Q1GRubidiumCueto.html">Thursday Schedule</a>
+  </nav>
+
+  <p class="students">Created by: Andy Morana, Sasha Chua, and Wayne Cueto</p>
+
+  <div class="flex">
+    <div class="welcome">
+      <p>Welcome! This is the Friday schedule of Rubidium'29. The Friday schedule consists of three double periods in the morning, and two single periods with a double study period in the afternoon.</p>
+    </div>
+
+    <div class="media">
+      <iframe src="https://www.youtube.com/embed/fsCKB1oI0TQ" allowfullscreen></iframe>
+      <img src="https://clashfordummies.com/wp-content/uploads/2016/02/hog-bath.jpg" alt="Hog Rider Image">
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Subject</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>7:20 AM - 8:15 AM</td><td rowspan="2">English 3</td></tr>
+      <tr><td>8:15 AM - 9:00 AM</td></tr>
+      <tr><td>9:00 AM - 9:10 AM</td><td style="background-color:#f9cb9c;">Break</td></tr>
+      <tr><td>9:10 AM - 9:55 AM</td><td rowspan="2">Social Science 3</td></tr>
+      <tr><td>9:55 AM - 10:40 AM</td></tr>
+      <tr><td>10:40 AM - 11:25 AM</td><td rowspan="2">Mathematics 3</td></tr>
+      <tr><td>11:25 AM - 12:10 PM</td></tr>
+      <tr><td>12:10 PM - 12:20 PM</td><td style="background-color:#f9cb9c;">Break</td></tr>
+      <tr><td>12:20 PM - 1:05 PM</td><td>Lunch</td></tr>
+      <tr><td>1:05 PM - 1:55 PM</td><td>Physics 1</td></tr>
+      <tr><td>1:55 PM - 2:35 PM</td><td>Study Period</td></tr>
+      <tr><td>2:35 PM - 2:45 PM</td><td style="background-color:#f9cb9c;">Break</td></tr>
+      <tr><td>2:45 PM - 3:30 PM</td><td>Study Period</td></tr>
+      <tr><td>3:30 PM - 4:15 PM</td><td>Computer Science 3</td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Alejandro Ocampo. All rights reserved.</p>
+    <p>
+      <a href="https://github.com/banonok11" target="_blank">My GitHub Profile</a> |
+      <a href="https://banonok11.github.io/CS3_2ndQtrPortfolio_RubidiumOcampo/" target="_blank">My GitHub Pages</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
