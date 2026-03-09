@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="A list of movies with titles, genres, and release years.">
+        <meta name="author" content="Alejandro G. Ocampo">
+
+        <title>Movie List</title>
+
+        <link rel="icon" href="/CS3_2ndQtrPortfolio_RubidiumOcampo/assets/favicon.ico">
+        <link rel="stylesheet" href="/CS3_2ndQtrPortfolio_RubidiumOcampo/public/external.css">
+
+        <style>
+            .container {
+                width: 450px;
+                margin: auto;
+                background: white;
+                padding: 25px;
+                margin-top: 40px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px gray;
+            }
+
+            h2 {
+                text-align: center;
+                color: #783f04;
+            }
+
+            label {
+                display: block;
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                margin-top: 15px;
+                background-color: #783f04;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .star {
+                font-size: 24px;
+                color: lightgray;
+                cursor: pointer;
+            }
+
+            .star.selected, .ratingStars{
+                color: gold;
+            }
+
+            .movieItem {
+                background: #eee;
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 6px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Add a Movie</h2>
+
+            <label>Title:</label>
+            <input id="title">
+
+            <label>Year:</label>
+            <input id="year" type="number">
+
+            <label>Genre:</label>
+            <select id="genre">
+                <option>Action</option>
+                <option>Comedy</option>
+                <option>Drama</option>
+                <option>Horror</option>
+                <option>Sports</option>
+                <option>Romance</option>
+                <option>Sci-Fi</option>
+            </select>
+
+            <label>Rating:</label>
+
+            <div id="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <button onclick="addMovie()">Add Movie</button>
+
+            <h2>Movie List</h2>
+
+            <div id="movieList"></div>
+
+        </div>
+
+        <footer>
+            <p>&copy; <span id="year"></span> Alejandro Ocampo. All rights reserved.</p>
+            <p>
+                <a href="https://github.com/banonok11" target="_blank">My GitHub Profile</a>
+            </p>
+        </footer>
+
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+
+        <script>
+        
+        let rating = 0
+
+        document.querySelectorAll(".star").forEach(star => {
+            star.addEventListener("click", function() {
+                rating = this.dataset.value
+                document.querySelectorAll(".star").forEach(s => s.classList.remove("selected"))
+                
+                for(let i=0;i<rating;i++){
+                    document.querySelectorAll(".star")[i].classList.add("selected")
+                }
+            })
+        })
+
+        function addMovie() {
+            let title = document.getElementById("title").value
+            let year = document.getElementById("year").value
+            let genre = document.getElementById("genre").value
+
+            if(title=="" || year=="" || rating==0) {
+                alert("Please fill all fields")
+                return
+            }
+
+            let movie = {
+                title:title,
+                year:year,
+                genre:genre,
+                rating:rating
+            }
+
+            let movies = JSON.parse(localStorage.getItem("movies")) || []
+
+            movies.push(movie)
+
+            localStorage.setItem("movies", JSON.stringify(movies))
+
+            displayMovies()
+            clearForm()
+
+            }
+            
+            function displayMovies() {
+                let movies = JSON.parse(localStorage.getItem("movies")) || []
+                let list = document.getElementById("movieList")
+                
+                list.innerHTML=""
+                
+                movies.forEach(m => {
+                    let stars = `<span class="ratingStars">${"★".repeat(m.rating)}</span>`
+                    
+                    list.innerHTML += `
+                    
+                    <div class="movieItem">
+                        ${m.title} (${m.year}) - ${m.genre}, Rating: ${stars}
+                        </div>
+                        `
+                })
+            }
+
+            function clearForm(){
+
+            document.getElementById("title").value=""
+            document.getElementById("year").value=""
+            rating=0
+
+            document.querySelectorAll(".star").forEach(s=>s.classList.remove("selected"))
+            }
+
+            displayMovies()
+            
+        </script>
+    </body>
+</html>

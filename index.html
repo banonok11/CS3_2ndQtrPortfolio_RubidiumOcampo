@@ -74,15 +74,21 @@
         <li><a href="./public/2Q1GRubidiumOcampo.html">Rubidium'29 Friday Schedule (First Graded Exercise)</a></li>
         <li><a href="./public/Q21NGRubidiumOcampo.html">1st Non-Graded Exercise</a></li>
         <li><a href="./public/2Q2GRubidiumOcampo.html">Rubidium'29 Friday Schedule (Second Graded Exercise)</a></li>
+        <li><a href="./public/quarter%204/q41gRubidiumOcampo.html">Movie List (Fourth Quarter, First Graded Exercise)</a></li>
       </ul>
     </nav>
   </section>
 
   <footer>
-    <p>&copy; 2025 Alejandro Ocampo. All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> Alejandro Ocampo. All rights reserved.</p>
     <p>
       <a href="https://github.com/banonok11" target="_blank">My GitHub Profile</a>
     </p>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
