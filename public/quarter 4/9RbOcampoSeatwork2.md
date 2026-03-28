@@ -1,17 +1,20 @@
 ## Step 1: 
 **Guided Question: What changed compared to the default static positioning? Try to give different values to top and left or you can change it to bottom, right.**
-
+- The sidebar moved slightly from its original position. It still keeps its space in the layout.
 
 ## Step 2:
 **Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?**
+- The footer stays at the bottom of the screen. This is because fixed positioning anchors it to the viewport instead of moving relative to its original position.
 
 ## Step 3:
 **Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?**
+Absolute positioning allows an element to be positioned relative to its nearest positioned ancestor. Fixed positioning positions it relative to the viewport and keeps it anchored while scrolling.
 
 ## Step 4:
 **Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?**
+- The notice appears on top because its higher z-index allows it to appear on top of the content. Swapping the values will make the content overlap the notice.
 
-# Reflection
+- # Reflection
 a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)?
 - Static - This is the default position of the element, meaning it is positioned according to the normal document flow, meaning the default way elements are displayed on an HTML page.
 - Relative - When using this css position value, the element will be displayed RELATIVE to its normal position meaning you can shift it left, right, top and bottom.
@@ -25,3 +28,6 @@ c. How do you differentiate sticky from fixed (you can research on sticky)?
 - Sticky uses scroll position while fixed does not. This means that when you use sticky on an element, that element will behave like a relative element until it reaches a specific scroll position. The css sticky position value only sticks within its entire parent container, not the entire viewport.
 
 d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples
+- Fixed positioning to keep details such as the event name or event date to always be visible at the top of the page.
+- Absolute positioning can be used to place a countdown timer for the event on top of something like an image of the event without affecting other elements.
+- The z-index can be used to ensure that the important elements or details appear on top of other content to highlight them.
